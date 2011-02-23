@@ -1,0 +1,70 @@
+<!--
+/*********************************************************************************
+ * The contents of this file are subject to the SugarCRM Public License Version
+ * 1.1.3 ("License"); You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at http://www.sugarcrm.com/SPL
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.  See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ *    (i) the "Powered by SugarCRM" logo and
+ *    (ii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.  See full license for
+ * requirements.
+ *
+ * The Original Code is: SugarCRM Open Source
+ * The Initial Developer of the Original Code is SugarCRM, Inc.
+ * Portions created by SugarCRM are Copyright (C) 2004 SugarCRM, Inc.;
+ * All Rights Reserved.
+ * Contributor(s): ______________________________________.
+ ********************************************************************************/
+/*********************************************************************************
+ * $Header: /home/app/tmp/cvsroot-ananas/Ledger/src/sugar_module/Ledger/AddContact.html,v 1.1 2005-05-11 11:45:11 gr Exp $
+ ********************************************************************************/
+-->
+<!-- BEGIN: main -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+			<form name="EditView" method="POST" action="index.php" >
+			<input type="hidden" name="module" value="Ledger">
+			<input type="hidden" name="record" value="{ID}">
+			<input type="hidden" name="action">
+			<input type="hidden" name="opportunity_id" value="{OPPORTUNITY_ID}">
+			<input type="hidden" name="contact_role">
+			<input type="hidden" name="case_id" value="{CASE_ID}">
+			<input type="hidden" name="bug_id" value="{BUG_ID}">
+			<input type="hidden" name="return_module" value="{RETURN_MODULE}">
+			<input type="hidden" name="return_id" value="{RETURN_ID}">
+			<input type="hidden" name="return_action" value="{RETURN_ACTION}">
+		<td ><input  type="text" name="search_text" value="{SEARCH_TEXT}"><input title="{MOD.LBL_GO_BUTTON_TITLE}" accessKey="{APP.LBL_SAVE_BUTTON_KEY}" class="button" onclick="this.form.action.value='AddContact';return check_form('EditView');" type="submit" name="button" value="  {MOD.LBL_GO_BUTTON_LABEL}  " > </td>
+			<td align='right'>{ADMIN_EDIT}</td>
+		</form>
+</tr>
+</table>
+
+
+<script type="text/javascript" language="Javascript">
+function copyAddressRight(form) {
+	form.alt_address_street.value = form.primary_address_street.value;
+	form.alt_address_city.value = form.primary_address_city.value;
+	form.alt_address_state.value = form.primary_address_state.value;
+	form.alt_address_postalcode.value = form.primary_address_postalcode.value;
+	form.alt_address_country.value = form.primary_address_country.value;
+	return true;
+}
+function copyAddressLeft(form) {
+	form.primary_address_street.value =	form.alt_address_street.value;
+	form.primary_address_city.value = form.alt_address_city.value;
+	form.primary_address_state.value = form.alt_address_state.value;
+	form.primary_address_postalcode.value =	form.alt_address_postalcode.value;
+	form.primary_address_country.value = form.alt_address_country.value;
+	return true;
+}
+</script>
+
+{JAVASCRIPT}
+
+<!-- END: main -->
